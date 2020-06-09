@@ -36,7 +36,7 @@ resource "azurerm_virtual_machine" "jumpbox" {
     version   = "latest"
   }
   storage_os_disk {
-    name              = "jumpbox-osdisk"
+    name              = "jumpox-osdisk" # => jumpbox
     caching           = "ReadWrite"
     create_option     = "FromImage"
     managed_disk_type = "Standard_LRS"

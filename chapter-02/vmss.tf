@@ -1,9 +1,15 @@
+# random_string for 
+# FQDN ( https://www.kagoya.jp/howto/network/fqdn/ )
+# => init で module download
 resource "random_string" "fqdn" {
   length  = 8
   special = false
   upper   = false
   number  = false
 }
+# ココ => { omngkpna }.japaneast.cloudapp.azure.com
+
+
 
 resource "azurerm_virtual_network" "vmss" {
   name                = "vmss-vnetz"
@@ -26,6 +32,7 @@ resource "azurerm_public_ip" "vmss" {
   allocation_method   = "Static"
   domain_name_label   = random_string.fqdn.result
 }
+
 
 
 # Load Balancer
